@@ -4,7 +4,7 @@
 <title>Arcade Games Online | Free Online Arcade Games | No Download Necessary | Akadia</title>
 <meta name="description" content="Play Arcade Games online in HTML5 using crypto payment">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://tmro2020.github.io/Media/Main/style/app.css">
+<link rel="stylesheet" href="./css/app.css">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon-precomposed" href="/img/apple-icon.png">
@@ -22,7 +22,9 @@
     <div class="middle">
       <h1>COMING SOON</h1>
       <hr>
-      <p>35 days left</p>
+      <br>
+      <p id="time"></p>
+
     </div>
     <div class="bottomleft">
       <p>Copyright (C) 2021 MIke MRO</p>
@@ -31,3 +33,49 @@
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Oct 30, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("time").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("time").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+
+</html>
